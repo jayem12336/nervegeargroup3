@@ -20,8 +20,8 @@ export default function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/home" className="nav-logo">
-            ShoeMaker
-            <i className="fas fa-shoe-prints"></i>
+            Nerve Gear Shop
+            <i class="fas fa-vr-cardboard"></i>
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -45,6 +45,17 @@ export default function NavBar() {
                 onClick={handleClick}
               >
                 About
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/stores"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Stores
               </NavLink>
             </li>
             <li className="nav-item">

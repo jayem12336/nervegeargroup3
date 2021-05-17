@@ -15,6 +15,7 @@ import NotFound from "./pages/404";
 import Login from "./pages/Login";
 import ContactAbout from "./pages/ContactAbout";
 import Signup from "./pages/Signup";
+import Stores from "./pages/Stores";
 
 function App() {
   const [values, setValues] = useState({
@@ -38,6 +39,7 @@ function App() {
   if (values.isLoading) {
     return <h1>Loading...</h1>
   }
+
   return (
     <Router>
       <Switch>
@@ -61,13 +63,20 @@ function App() {
           isAuthenticated={values.isAuthenticated}
           path="/home"
         />
-        <Route
+        <PrivateRoute
           component={Profile}
+          isAuthenticated={values.isAuthenticated}
           path="/profile"
         />
-        <Route
+        <PrivateRoute
           component={ContactAbout}
+          isAuthenticated={values.isAuthenticated}
           path="/contactabout"
+        />
+        <PrivateRoute
+          component={Stores}
+          isAuthenticated={values.isAuthenticated}
+          path="/stores"
         />
         <Route
           component={NotFound}
